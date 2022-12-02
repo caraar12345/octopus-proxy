@@ -1,16 +1,12 @@
-from gql import gql
-auth_mutation = gql(
-    """
+auth_mutation = """
     mutation krakenTokenAuthentication($apiKey: String!) {
       obtainKrakenToken(input: {APIKey: $apiKey}) {
         token
       }
     }
-    """
-)
+"""
 
-viewer_query = gql(
-    """
+viewer_query = """
     query viewer {
       viewer {
         fullName
@@ -20,10 +16,8 @@ viewer_query = gql(
       }
     }
     """
-)
 
-account_details_query = gql(
-    """
+account_details_query = """
     query accountDetails($accountNumber: String!) {
       account(accountNumber: $accountNumber) {
         number
@@ -54,4 +48,3 @@ account_details_query = gql(
       }
     }
     """
-)

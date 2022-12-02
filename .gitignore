@@ -1,1 +1,2 @@
-octopus-proxy/creds.py
+creds.py
+.env

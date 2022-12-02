@@ -1,11 +1,11 @@
 import falcon
 import sys
 
-sys.path.append('octopus-proxy/')
-from main import GetRates
-
+sys.path.append("octopus-proxy/")
 
 app = application = falcon.App()
-get_rates = GetRates()
-app.add_route('/get_rates', get_rates)
 
+from rates import RatesResource
+
+rates = RatesResource()
+app.add_route("/get_rates", rates)
